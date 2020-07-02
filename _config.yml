@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "baeksy의 학습노트"
+title                    : "baeksy blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "백승엽의 블로그" 
-description              : "머신러닝과 딥러닝, 매일매일 학습한 내용을 올리는 블로그"
+name                     : "baeksy blog" 
+description              : "매일매일 학습한 내용을 올리는 블로그"
 url                      : "https://bsy3719.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "bsy3719/bsy3719.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -293,3 +293,5 @@ defaults:
       comments: # true
       share: true
       related: true
+
+# _pages 부분
