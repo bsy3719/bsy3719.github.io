@@ -26,7 +26,7 @@ baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "bsy3719/bsy3719.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # 티저 이미지 e.g. "/assets/images/500x300.png" 티
 logo                     : # 타이틀 옆에 작게 들어갈 이미지, e.g. "/assets/images/88x88.png"
-masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
+masthead_title           : 기록하는 개발자 Blog
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -295,7 +295,7 @@ defaults:
       read_time: true
       comments: # true
       #share: true
-      #related: true
+      related: true
 
 # _pages 부분
   - scope:
