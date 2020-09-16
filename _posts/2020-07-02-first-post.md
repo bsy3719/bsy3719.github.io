@@ -1,6 +1,6 @@
 ---
 title: "Welcome to Jekyll!"
-date: 2020-07-02 20:35:00 -0400
+date: 2020-07-02 20:00:00 -0400
 categories: gitblog
 tags: jekyll
 ---

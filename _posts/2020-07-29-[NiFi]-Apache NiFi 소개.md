@@ -46,17 +46,17 @@ NiFi는 Flow Based Programming(FBP)의 개념을 구현했으며, 프로세서�
 
 # 아키텍처
 
-<img src="/Users/baek/git/bsy3719.github.io/assets/images/nifi/[nifi] architecture.png">
+![NiFi 아키텍쳐]({{ site.url }}{{ site.baseurl }}/assets/images/nifi/nifi_architecture.png){: .align-center}
 
 NiFi는 JVM 환경에서 실행되며, 위 그림과 같은 컴포넌트들로 구성되어 있다,
 
 ## Web Server
 
-- NiFi는 UI를 웹 서비스를 통해 제공하며, 개발자 혹은 관리자는 이를 이용하여 Dataflow를 개발, 제어, 모니터링을 한다.
+NiFi는 UI를 웹 서비스를 통해 제공하며, 개발자 혹은 관리자는 이를 이용하여 Dataflow를 개발, 제어, 모니터링을 한다.
 
 ## Flow Controller
 
-- Processor(Extension)가 실행되도록 쓰레드를 만들고, 프로세서를 실행하는 스케줄링 담당
+Processor(Extension)가 실행되도록 쓰레드를 만들고, 프로세서를 실행하는 스케줄링 담당
 
 ## Extension
 
@@ -64,15 +64,15 @@ NiFI가 제공하는 기본 Processor들 외, 개발자가 프로세스를 개�
 
 ## FlowFile Repository
 
-- Write-Ahead-Log로 FlowFile의 상태와 속성값들을 저장하는 곳이다. 일반적으로 Raid 10으로 디스크를 구성하여 저장해, 시스템 장애때 유실되지 않게 한다.
+Write-Ahead-Log로 FlowFile의 상태와 속성값들을 저장하는 곳이다. 일반적으로 Raid 10으로 디스크를 구성하여 저장해, 시스템 장애때 유실되지 않게 한다.
 
 ## Content Repository
 
-- FlowFile의 데이터(Content)가 저장되며, 일반적으로 Raid10으로 디스크를 구성해 저장하며, 여러 디렉토리에 분석 저징이 가능하다. 이 때문에 용량이 큰 데이터를 저장할 수 있으며, 단일 디스크의 처리량보다 많은 양을 처리할 수 있다. NiFi 시스템의 역할을 봤을 때, 일반적으로 여러 파티션을 사용할 경우가 많지 않다.
+FlowFile의 데이터(Content)가 저장되며, 일반적으로 Raid10으로 디스크를 구성해 저장하며, 여러 디렉토리에 분석 저징이 가능하다. 이 때문에 용량이 큰 데이터를 저장할 수 있으며, 단일 디스크의 처리량보다 많은 양을 처리할 수 있다. NiFi 시스템의 역할을 봤을 때, 일반적으로 여러 파티션을 사용할 경우가 많지 않다.
 
 ## Provenance Repository
 
-- 데이터의 처리 단계별로 FlowFile의 변화데이터를 보관하는 곳으로 여러 디스크를 지원하며, 각 데이터는 인덱스 되어 검색할 수 있다.
+데이터의 처리 단계별로 FlowFile의 변화데이터를 보관하는 곳으로 여러 디스크를 지원하며, 각 데이터는 인덱스 되어 검색할 수 있다.
 
 # 나이파이 설치(MAC)
 
