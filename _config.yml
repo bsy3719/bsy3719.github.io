@@ -111,11 +111,11 @@ author:
   avatar           : "assets/images/profile.png"
   bio              : "꾸준히 공부하는 개발자입니다."
   location         : "Republic of Korea"
-  email            : "bsy3719@gmail.com"
+  email            : 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      #url : mailto:bsy3719@gmail.com
+      url : mailto:bsy3719@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -292,8 +292,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      #read_time: true
-      comments: # true
+      read_time: false
+      comments: false
       share: true
       related: true
 
