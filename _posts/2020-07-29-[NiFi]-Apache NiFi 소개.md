@@ -1,7 +1,6 @@
 ---
 title: "[NiFi] 아파치 나이파이 소개"
-#date: 2020-07-29 20:00:00 -0400
-last_modified_at: 2020-07-29 20:00:00 -0400
+date: 2020-07-29 20:00:00 -0400
 toc: true
 toc_label: "아파치 나아피아 소개"
 toc_sticky: true
@@ -49,7 +48,7 @@ NiFi는 Flow Based Programming(FBP)의 개념을 구현했으며, 프로세서�
 
 ## 아키텍처
 
-![NiFi 아키텍쳐]({{ site.url }}{{ site.baseurl }}/assets/images/nifi/nifi_architecture.png){: .align-center}
+![architecture]({{ site.url }}{{ site.baseurl }}/assets/images/nifi/architecture.png){: .align-center}
 
 NiFi는 JVM 환경에서 실행되며, 위 그림과 같은 컴포넌트들로 구성되어 있다,
 
@@ -151,7 +150,7 @@ export JAVA_HOME=[자바 경로]
 
 NiFi 실행 후 Web브라우저를 열고 localhost:8080/nifi를 입력한다. 기본 포트로 8080이 설정되어 있지만, conf/nifi.porperties 수정이 가능하다.
 
-<img src="https://nifi.apache.org/docs/nifi-docs/html/images/nifi-toolbar-components.png">
+![툴바-컴포넌트]({{ site.url }}{{ site.baseurl }}/assets/images/nifi/toolbar-components.png){: .align-center}
 
 **Componets Toolbar**
 
@@ -159,7 +158,8 @@ NiFi에서 사용하는 컴포넌트들이다. 이 컴포넌트를 클리갛여 
 
 **Global Menu**
 
-<img src="http://www.popit.kr/wp-content/uploads/2016/09/global-menu.png">
+![global-menu]({{ site.url }}{{ site.baseurl }}/assets/images/nifi/global-menu.png){: .align-center}
+
 
 - Summary : NiFi에 등록된 컴포넌트들을 종합적으로 보고, 검색할 수 있다.
 - Counters : Mapreduce의 카운터와 유사한 기능으로 특정 Processor에서 발생시키는 카운트 정보를 제공한다.
@@ -187,19 +187,19 @@ NiFi 컴포넌트드르이 설정, 활성/비활성화, 시작/멈춤, 템플릿
 
 Processor 등록을 위해서는 Compoent Toolbar의 Processor 아이콘을 선택하여, 드래그하여 캔버스의 원하는 위치에 놔두면 아래와 같이 추가할 Processor를 검색할 수 있다.
 
-<img src="https://nifi.apache.org/docs/nifi-docs/html/images/add-processor.png">
+![add-processor]({{ site.url }}{{ site.baseurl }}/assets/images/nifi/add-processor.png){: .align-center}
 
 오른쪽 상단의 필터에 검색어를 입력하여 태그 또는 프로세서 명으로 필터링 할 수 있으며, 옆 Tag Cloud를 통해 Processor들을 분류할 수도 있다. 사용할 Porocessor를 테이블에서 선택하고, ADD 버튼을 눌러 등록한다. 여기서는 임의의 FlowFile을 생성하는 GenerateFlowFile을 등록한다.
 
 등록된 GenerateFlowFile Processor를 선태갛고, 오른쪽 마우스 -> Configuration을 선택하거나, Operation Palette의 설정 버튼을 눌러 다음과 같은 설정을 할 수 있으며, APPLY를 눌러 설정을 저장할 수 있다. 
 
-<img src="http://www.popit.kr/wp-content/uploads/2016/09/processor-connection.png">
+![processor-connetction]({{ site.url }}{{ site.baseurl }}/assets/images/nifi/processor-connection.png){: .align-center}
 
 같은 방법으로 LogAttribute라는 Processor도 등록한다. 이는 FlowFile 정보를 NiFi로그 파일 ($NIFI_HOME/logs/nifi-app.log)에 출력시킬 수 있다.
 
 Processor 위에 마우스를 올리면 연결 버튼이 나오는데 이 버튼을 선태갛여, GenerateFlowFile과 LogAttribute Processor를 연결하고, Operate Plaette에 시작 버튼을 선택하여 Dataflow를 시작한다. 로그 파일을 "tail -f"로 보면 FlowFile의 속성 정보들이 로그에 출력되는 것을 확인 할 수 있다. 정지 버튼을 선택하여 Dataflow를 정지시킨다.
 
-<img src="http://www.popit.kr/wp-content/uploads/2016/09/Basic-Processors.png">
+![basic-processors]({{ site.url }}{{ site.baseurl }}/assets/images/nifi/basic-processors.png){: .align-center}
 
 ## 프로세서로 가능한 역할
 

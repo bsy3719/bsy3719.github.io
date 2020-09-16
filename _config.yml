@@ -115,7 +115,7 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url : mailto:bsy3719@gmail.com
+      #url : mailto:bsy3719@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -292,7 +292,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true
+      #read_time: true
       comments: # true
       share: true
       related: true
