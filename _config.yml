@@ -110,12 +110,12 @@ author:
   name             : "백승엽"
   avatar           : # 프로필 이미지, e.g. "/assets/images/bio-photo.jpg"
   bio              : "꾸준히 공부하는 개발자입니다."
-  #location         : "Republic of Korea"
-  #email            : "bsy3719@gmail.com"
+  location         : "Republic of Korea"
+  email            : "bsy3719@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      #url : mailto:bsy3719@gmail.com
+      url : mailto:bsy3719@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -127,7 +127,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+      url: "https://github.com/bsy3719"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -226,7 +226,7 @@ sass:
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins (previously gems:)
@@ -294,7 +294,7 @@ defaults:
       author_profile: true
       read_time: true
       comments: # true
-      #share: true
+      share: true
       related: true
 
 # _pages 부분

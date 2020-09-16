@@ -1,12 +1,15 @@
 ---
 title: "[NiFi] 아파치 나이파이 소개"
-date: 2020-07-29 20:00:00 -0400
+#date: 2020-07-29 20:00:00 -0400
+last_modified_at: 2020-07-29 20:00:00 -0400
+toc: true
+toc_label: "아파치 나아피아 소개"
+toc_sticky: true
 categories: bigdata
 tags: NiFi
+description: Apache NiFi에 대해 소개하는 글입니다.
 ---
-# 소개
-
-아파치 나이파이(Apache NiFi, 나이아가라파일즈/NiagaraFiles의 준말)는 소프트웨어 시스템 간 데이터 흐름을 자동화하도록 설계된 아파치 소프트웨어 재단의 프로젝트이다. 과거에 NSA에 의해 개발되었고 2014년 기술 전송 프로그램의 일부로서 오픈소스화된 나이아가라파일즈(NiagaraFiles) 소프트웨어에 기반을 둔다.
+아파치 나이파이(Apache NiFi, 나이아가라파일즈/NiagaraFiles의 준말)는 소프트웨어 시스템 간 데이터 흐름을 자동화하도록 설계된 아파치 소프트웨어 재단의 프로젝트이다. 과거에 NSA에 의해 개발되었고 2014년 기술 전송 프로그램의 일부로서 오픈소스화된 나이아가라파일 소프트웨어에 기반을 둔다.
 
 - Dataflow를 쉽게 개발할 수 있고, 시스템 간의 데이터 이동과 내용을 볼 수 있는 기능과 UI 제공
 - 실시간 데이터 전송에 필요한 유용한 기능을 제공
@@ -25,7 +28,7 @@ NiFi는 Flow Based Programming(FBP)의 개념을 구현했으며, 프로세서�
 | Flow Controller    | Scheduler          | Controller는 프로세스가 모든 프로세스가 사용하는 스레드 및 할당을 연결하고 관리하는 방법을 관리한다.  플로우 컨트롤러는 프로세서 간의 플로우 파일 교환을 용이하게하는 브로커 역할을 한다. |
 | Process Group      | subnet             | 특정 업무, 기능 단위로 여러 Processor를 묶을 수 있으며, Input과 Output 포트를 제공해 Process Group간의 데이터 이동이 가능하다. |
 
-# 장단점
+## 장단점
 
 장점
 
@@ -44,37 +47,37 @@ NiFi는 Flow Based Programming(FBP)의 개념을 구현했으며, 프로세서�
 - 오직 실행이 끝나고 성공과 실패, 출력 결과만을 알 수 있음
 - 간단한 데이터 조작만 가능하지, 복잡한 연산은 잘 못함(Spark, Storm과 연동 가능)
 
-# 아키텍처
+## 아키텍처
 
 ![NiFi 아키텍쳐]({{ site.url }}{{ site.baseurl }}/assets/images/nifi/nifi_architecture.png){: .align-center}
 
 NiFi는 JVM 환경에서 실행되며, 위 그림과 같은 컴포넌트들로 구성되어 있다,
 
-## Web Server
+### Web Server
 
 NiFi는 UI를 웹 서비스를 통해 제공하며, 개발자 혹은 관리자는 이를 이용하여 Dataflow를 개발, 제어, 모니터링을 한다.
 
-## Flow Controller
+### Flow Controller
 
 Processor(Extension)가 실행되도록 쓰레드를 만들고, 프로세서를 실행하는 스케줄링 담당
 
-## Extension
+### Extension
 
 NiFI가 제공하는 기본 Processor들 외, 개발자가 프로세스를 개발해 확장할 수 있다.
 
-## FlowFile Repository
+### FlowFile Repository
 
 Write-Ahead-Log로 FlowFile의 상태와 속성값들을 저장하는 곳이다. 일반적으로 Raid 10으로 디스크를 구성하여 저장해, 시스템 장애때 유실되지 않게 한다.
 
-## Content Repository
+### Content Repository
 
 FlowFile의 데이터(Content)가 저장되며, 일반적으로 Raid10으로 디스크를 구성해 저장하며, 여러 디렉토리에 분석 저징이 가능하다. 이 때문에 용량이 큰 데이터를 저장할 수 있으며, 단일 디스크의 처리량보다 많은 양을 처리할 수 있다. NiFi 시스템의 역할을 봤을 때, 일반적으로 여러 파티션을 사용할 경우가 많지 않다.
 
-## Provenance Repository
+### Provenance Repository
 
 데이터의 처리 단계별로 FlowFile의 변화데이터를 보관하는 곳으로 여러 디스크를 지원하며, 각 데이터는 인덱스 되어 검색할 수 있다.
 
-# 나이파이 설치(MAC)
+## 나이파이 설치(MAC)
 
 brew를 이용한 설치
 
@@ -102,11 +105,11 @@ NiFi 종료
 nifi stop
 ```
 
-# 나이파이 설치(Linux)
+## 나이파이 설치(Linux)
 
 NiFi 설치
 
-- NiFi를 사용하기 전에 java가 설치되어 있어야함.(현재 리눅스에 1.8.0_181버전이 설치되어 있음.)
+NiFi를 사용하기 전에 java가 설치되어 있어야함(리눅스에 1.8.0_181버전이 설치){: .notice--info}
 
 ```shell
 wget https://downloads.apache.org/nifi/1.11.4/nifi-1.11.4-bin.tar.gz
@@ -144,7 +147,7 @@ export JAVA_HOME=[자바 경로]
 ./bin/nifi.sh stop
 ```
 
-# NiFi 웹 구성 요소
+## NiFi 웹 구성 요소
 
 NiFi 실행 후 Web브라우저를 열고 localhost:8080/nifi를 입력한다. 기본 포트로 8080이 설정되어 있지만, conf/nifi.porperties 수정이 가능하다.
 
@@ -180,7 +183,7 @@ NiFi에 등록된 Processor, Connection을 검색 할 수 있다.
 
 NiFi 컴포넌트드르이 설정, 활성/비활성화, 시작/멈춤, 템플릿 생성/등록, 컴포넌트 복사/붙여넣기, Processor Group화, 컴포넌트 색 변경, 컴포넌트 삭제 기능을 제공한다. 캔버스에서 컨포넌트를 선택하면, 상황에 따라 버튼들이 비활성화된다.
 
-### NiFi Processor 등록 및 연결
+## NiFi Processor 등록 및 연결
 
 Processor 등록을 위해서는 Compoent Toolbar의 Processor 아이콘을 선택하여, 드래그하여 캔버스의 원하는 위치에 놔두면 아래와 같이 추가할 Processor를 검색할 수 있다.
 
@@ -198,9 +201,9 @@ Processor 위에 마우스를 올리면 연결 버튼이 나오는데 이 버튼
 
 <img src="http://www.popit.kr/wp-content/uploads/2016/09/Basic-Processors.png">
 
-### 프로세서로 가능한 역할
+## 프로세서로 가능한 역할
 
-# Data Transformation
+### Data Transformation
 
 - **CompressContent** : Content 압축 및 압축 해제
 - **ConvertCharacterSet** : Character set 변환
@@ -209,7 +212,7 @@ Processor 위에 마우스를 올리면 연결 버튼이 나오는데 이 버튼
 - **TransformXml** : XML 내용에 XSLT 변환 적용
 - **JoltTransformJSON** : JSON Content 변환
 
-## Routing and Mediation
+### Routing and Mediation
 
 - **ControlRate** : 데이터 흐름 속도 조절
 - **DetectDuplicate** : 중복 FlowFile 모니터링
@@ -221,7 +224,7 @@ Processor 위에 마우스를 올리면 연결 버튼이 나오는데 이 버튼
 - **ScanContent** : 사용자 정의 Content에 일치하는 지 확인
 - **ValidateXml** : 사용자 XML 스키마에 따라 FlowFile의 내용이 유효한지 검증
 
-## Database Access
+### Database Access
 
 - **ConvertJSONToSQL** : JSON을 통한 SQL INSERT, UPDATE
 - **ExecuteSQL** : Avro 형식의 FlowFile의 결과를 기록하여 SELECT 명령 실행
@@ -229,7 +232,7 @@ Processor 위에 마우스를 올리면 연결 버튼이 나오는데 이 버튼
 - **SelectHiveQL** : 사용자 정의 HiveQL SELECT 명령을 실행하여 Avro 또는 CSV형식으로 FlowFile에 기록
 - **PutHiveQL** : FlowFile의 내용으로 정의된 HiveQL DDM문을 실행하여 Hive 데이터베이스를 업데이트
 
-## Attribute Extraction
+### Attribute Extraction
 
 - **EvaluateJsonPath** : 
 - **EvaluateXPath** : 사용자는 XPath 표현식을 제공 한 다음 이러한 표현식을 XML 컨텐츠와 비교하여 평가하여 FlowFile 컨텐츠를 바꾸거나 사용자 이름 속성으로 값을 추출
@@ -240,12 +243,12 @@ Processor 위에 마우스를 올리면 연결 버튼이 나오는데 이 버튼
 - **IdentifyMimeType** : FlowFile이 캡슐화하는 파일 형식을 결정하기 위해 FlowFile의 내용을 평가. 이 프로세서는 이미지, 워드 프로세서 문서, 텍스트 및 압축 형식과 같은 다양한 MIME 유형을 감지 할
 - **UpdateAttribute** : 원하는 수의 사용자 정의 속성을 FlowFile에 추가하거나 업데이트 이는 정적으로 구성된 값을 추가하고 표현식 언어를 사용하여 속성 값을 동적으로 도출하는 데 유용
 
-## System Interaction
+### System Interaction
 
 - **ExecuteProcess** : 사용자 정의 운영 체제 명령을 실행
 - **ExecuteStreamCommand** : 사용자 정의 운영 체제 명령을 실행. FlowFile의 내용은 선택적으로 프로세스의 StdIn으로 스트리밍됩니다. StdOut에 작성된 컨텐츠는 아웃 바운드 FlowFile의 컨텐츠가 됨
 
-## Data Ingestion
+### Data Ingestion
 
 - **GetFile** : 파일의 내용을 로컬 디스크 (또는 네트워크 연결 디스크)에서 NiFi로 스트리밍 한 다음 원본 파일을 삭제
 - **GetFTP** : FTP를 통해 원격 파일의 내용을 NiFi로 다운로드 한 다음 원본 파일을 삭제
@@ -262,7 +265,7 @@ Processor 위에 마우스를 올리면 연결 버튼이 나오는데 이 버튼
 - **GetMongo** : MongoDB에 대해 사용자 지정 쿼리를 실행하고 내용을 새 FlowFile에 씁니다.
 - **GetTwitter** : 사용자가 Twitter "Garden hose" 또는 Enterprise 엔드 포인트를 청취하도록 필터를 등록하여 수신되는 각 트윗에 대한 FlowFile을 작성할 수 있음
 
-## Data Egress / Sending Data
+### Data Egress / Sending Data
 
 - **PutEmail** : 구성된 수신자에게 이메일을 보냅니다. FlowFile의 내용은 선택적으로 첨부 파일로 전송됩니다.
 - **PutFile** : FlowFile의 내용을 로컬 (또는 네트워크 연결) 파일 시스템의 디렉토리에 씁니다.
@@ -273,7 +276,7 @@ Processor 위에 마우스를 올리면 연결 버튼이 나오는데 이 버튼
 - **PutKafka** : FlowFile의 내용을 Apache Kafka, 특히 0.8.x 버전의 메시지로 메시지로 보냄
 - **PutMongo** : FlowFile의 내용을 INSERT 또는 UPDATE로 Mongo에 보냄
 
-## Splitting and Aggregation
+### Splitting and Aggregation
 
 - **SplitText** : SplitText는 내용이 텍스트 인 단일 FlowFile을 가져와 구성된 줄 수에 따라 하나 이상의 FlowFile로 분할
 - **SplitJson** : 사용자가 배열 또는 많은 하위 객체로 구성된 JSON 객체를 JSON 요소 당 FlowFile로 분할
@@ -283,7 +286,7 @@ Processor 위에 마우스를 올리면 연결 버튼이 나오는데 이 버튼
 - **SegmentContent** : 일부 구성된 데이터 크기에 따라 FlowFile을 잠재적으로 여러 개의 작은 FlowFile로 분할. 분할은 모든 종류의 구분자에 대해 수행되는 것이 아니라 바이트 오프셋에 기초하여 수행
 - **SplitContent** : 단일 FlowFile을 SegmentContent와 유사하게 잠재적 인 많은 FlowFile로 분할
 
-## HTTP
+### HTTP
 
 - **GetHTTP** : 원격 HTTP 또는 HTTPS 기반 URL의 내용을 NiFi로 다운로드
 - **ListenHTTP** : HTTP (또는 HTTPS) 서버를 시작하고 들어오는 연결을 수신합니다. 들어오는 POST 요청의 경우 요청 내용이 FlowFile로 기록되고 200 응답이 반환
@@ -291,7 +294,7 @@ Processor 위에 마우스를 올리면 연결 버튼이 나오는데 이 버튼
 - **PostHTTP** : FlowFile의 내용을 메시지 본문으로 전송하여 HTTP POST 요청을 수행합니다. Site-to-Site를 사용할 수없는 경우 서로 다른 두 개의 NiFi 인스턴스간에 데이터를 전송하기 위해 ListenHTTP와 함께 사용
 - **HandleHttpRequest** / **HandleHttpResponse** : HandleHttpRequest 프로세서는 ListenHTTP와 유사하게 내장 HTTP (S) 서버를 시작하는 소스 프로세서입니다. 그러나 클라이언트에 응답을 보내지 않습니다. 대신, FlowFile은 HTTP 요청의 본문과 함께 모든 일반 서블릿 매개 변수, 헤더 등에 대한 속성 및 속성으로 속성으로 전송됩니다. 그러면 HandleHttpResponse는 FlowFile 처리가 완료된 후 클라이언트로 응답을 다시 보낼 수 있습니다. 이 프로세서는 항상 서로 함께 사용되어야하며 사용자는 NiFi 내에서 웹 서비스를 시각적으로 만들 수 있습니다.
 
-## Amazon Web Services
+### Amazon Web Services
 
 - **FetchS3Object** : Amazon Simple Storage Service (S3)에 저장된 객체의 컨텐츠를 가져옵니다. S3에서 검색된 컨텐츠는 FlowFile의 컨텐츠에 기록됩니다.
 - **PutS3Object** : 구성된 자격 증명, 키 및 버킷 이름을 사용하여 FlowFile의 내용을 Amazon S3 객체에 사용
