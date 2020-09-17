@@ -157,7 +157,7 @@ List Queue를 클릭하면 해당 queue에 존재하는 FlowFile의 Attribute와
 
 ![queue]({{ site.url }}{{ site.baseurl }}/assets/images/nifi/apache/queue-3.png){: .align-center}
 
-## Elasticsearch 확인
+## Elasticsearch 저장 index 확인
 
 아래의 명령어로 Elasticsearch index가 존재하는 지 확인할 수 있다.
 
@@ -171,4 +171,4 @@ curl -XGET 'localhost:9200/_cat/indices?v&pretty'
 
 ## 느낀점
 
-NiFi를 사용할 때는 flowfile의 attribute와 content의 차이를 알고 사용하는게 중요하다. 값을 추출하거나 업데이트하고 싶을때는 content를 attribute로 변환하여 하는 것이 더 편하다.
+NiFi를 사용할 때는 flowfile의 attribute와 content의 차이를 알고 사용하는게 중요하다. 값을 업데이트하고 싶을때는 content를 attribute로 변환한 후 작업하는 것이 편하다.
