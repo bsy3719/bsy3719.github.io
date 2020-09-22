@@ -1,11 +1,21 @@
 ---
 title: "[NiFi] Apache Access Log 연동"
 date: 2020-09-17 00:00:00 -0000
+
+tagline: "by baeksy"
+header:
+  overlay_image: /assets/images/splash/nifi.png
+  overlay_filter: 0.5
+  #show_overlay_excerpt : false
+
 toc: true
 toc_label: "Apache Access Log 연동"
 toc_sticky: true
-categories: bigdata
-tags: NiFi
+
+categories: 
+  - bigdata
+tags: 
+  - NiFi
 description: Apache Access Log 파일을 가져와 정형화하고 Elasticsearch에 쌓는 방법을 설명
 ---
 이 글은 NiFi를 활용하여 Apache Access Log를 읽어와 정형화하고 Elasticsearch에 연동하는 방법을 설명하는 글이다. NiFi에 대해 한글로 example과 한글로 번역된 글이 부족하여 많은 시행착오를 거쳤다.
@@ -14,9 +24,9 @@ description: Apache Access Log 파일을 가져와 정형화하고 Elasticsearch
 
 [Github](https://github.com/kiritbasu/Fake-Apache-Log-Generator)에서 Apache Access Log를 생성하는 파일을 다운받는다.
 
-**기본적인 사용법**
+### 기본적인 사용법
 
-- 100개 샘플 로그를 10초 간격으로 생성
+아래를 실행하면 5초 간격으로 로그를 무한히 생성한다.
 
   ```shell
   python apache-fake-log-gen.py -n 0 -s 5 -o LOG 
@@ -119,7 +129,7 @@ JSON으로 변환된 FlowFile의 Content를 Elasticsearch에 전송해주는 Pro
 
 - Elasticsearch URL : 연동할 Elasticsearch의 URL
 
-- index : Elasticseach로 연동될 데이터의 index(ex apache-yyyy.MM.dd)
+- Index : Elasticseach로 연동될 데이터의 index(ex apache-yyyy.MM.dd)
 
   [NiFi Expression Language](https://nifi.apache.org/docs/nifi-docs/html/expression-language-guide.html#strings) : NiFi에서 Attribute를 조작하는 기능을 제공
 

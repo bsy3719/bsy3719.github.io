@@ -1,11 +1,21 @@
 ---
 title: "[NiFi] Apache NiFi 소개"
-date: 2020-07-29 20:00:00 -0400
+date: 2020-09-15 20:00:00 -0000
+
+tagline: "by baeksy"
+header:
+  overlay_image: /assets/images/splash/nifi.png
+  overlay_filter: 0.5
+  #show_overlay_excerpt : false
+
 toc: true
-toc_label: "아파치 나아피아 소개"
+toc_label: "Apache NiFi 소개"
 toc_sticky: true
-categories: bigdata
-tags: NiFi
+
+categories: 
+  - bigdata
+tags: 
+  - NiFi
 description: Apache NiFi에 대해 소개하는 글입니다.
 ---
 아파치 나이파이(Apache NiFi, 나이아가라파일즈/NiagaraFiles의 준말)는 소프트웨어 시스템 간 데이터 흐름을 자동화하도록 설계된 아파치 소프트웨어 재단의 프로젝트이다. 과거에 NSA에 의해 개발되었고 2014년 기술 전송 프로그램의 일부로서 오픈소스화된 나이아가라파일 소프트웨어에 기반을 둔다.

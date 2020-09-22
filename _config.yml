@@ -19,7 +19,7 @@ locale                   : "ko-KR"
 title                    : "baeksy blog" # meta 태그에 들어기는 영역
 title_separator          : "-" # 타이틀 사이 구분자
 subtitle                 : # 타이틀 아래 작은 글씨
-name                     : "baeksy" 
+name                     : "baekssy" 
 description              : "매일매일 학습한 내용을 올리는 블로그"
 url                      : "https://bsy3719.github.io" # git 블로그 호스트 주소
 baseurl                  : # the subpath of your site, e.g. "/blog"
