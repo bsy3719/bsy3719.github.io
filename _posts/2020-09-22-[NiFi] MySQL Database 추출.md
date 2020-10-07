@@ -55,7 +55,7 @@ NiFi에는 관계형 Database에서 행을 추출하기 위한 두 개의 Proces
   
 ## DBCPConnetionPool 설명
 
-NiFi와 Database를 연동하게 된다면 NiFi에서 제공하는 Controler Service 중 하나이다. Controller Service는 여러 프로세서에서 사용할 수 있는 shared service이다. 
+NiFi와 Database를 연동하게 된다면 사용하는 Controler Service 중 하나이다. Controller Service는 여러 프로세서에서 사용할 수 있는 shared service이다. 
 
 - ### ConnectionPool
   ConnectionPool이란 DB와 미리 연결 해놓은 객체를 pool에 저정해두었다가, 클라이언트의 요청이 오면 connection을 빌려부고, 볼일이 끝나면 다시 connection을 pool에 저장하는 방식을 말한다.
@@ -86,8 +86,8 @@ NiFi와 Database를 연동하게 된다면 NiFi에서 제공하는 Controler Ser
 
 - Database Connection Pooling Service : 사용할 DB Connetction Pool을 설정한다. DB Connection Pool은 DB에 대한 접속정보를 입력하여 만들 수 있다. 오른쪽의 화살표를 클릭시 DBCPConnectionPool에 접근할 수 있다.
 - Database Type : DB 타입을 지정한다. MySQL을 사용하므로 MySQL을 지정한다.
-- Table Name :
-- Columns to Return : 정보를 가져올 DB의 테이블 이름을 입력한다.
+- Table Name : 정보를 가져올 DB의 테이블 이름을 입력한다.
+- Columns to Return : 정보를 가져올 컬럼명을 콤마(,)로 구분하여 입력한다.
 - Additional WHERE clause : Query문의 WHERE문에 해당하는 조건을 입력한다.
 - Maximum-value Columns : 테이블에 값이 계속하여 증가하는 Sequence의 역할을 하는 컴럼을 지정하여 데이터를 가져올때마다 그 컬럼의 최대값을 가져온다. 다음 데이터를 가져올때 바로 전의 값과 비교하여 해당 값보다 큰 레코드만 가져올 수 있도록 한다.
 
