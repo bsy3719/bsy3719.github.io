@@ -13,7 +13,7 @@ toc_label: "Apache NiFi 소개"
 toc_sticky: true
 
 categories: 
-  - bigdata
+  - Bigdata
 tags: 
   - NiFi
 description: Apache NiFi에 대해 소개하는 글입니다.

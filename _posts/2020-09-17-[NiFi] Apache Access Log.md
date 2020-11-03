@@ -13,7 +13,7 @@ toc_label: "Apache Access Log 연동"
 toc_sticky: true
 
 categories: 
-  - bigdata
+  - Bigdata
 tags: 
   - NiFi
 description: Apache Access Log 파일을 가져와 정형화하고 Elasticsearch에 쌓는 방법을 설명하는 글입니다.
