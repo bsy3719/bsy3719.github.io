@@ -13,9 +13,9 @@ toc_label: "NiFi Database 추출"
 toc_sticky: true
 
 categories: 
-  - Bigdata
-tags: 
   - NiFi
+tags: 
+  - Bigdata
 description: Apache NiFi를 이용하여 MySQL의 데이터를 가져오는 방법을 설명한 글입니다.
 ---
 

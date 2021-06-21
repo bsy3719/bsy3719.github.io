@@ -13,9 +13,9 @@ toc_label: "NiFi REST API 연동"
 toc_sticky: true
 
 categories: 
-  - Bigdata
-tags: 
   - NiFi
+tags: 
+  - Bigdata
 description: Apache NiFi를 이용하여 API 연동하는 방법을 설명한 글입니다.
 ---
 
