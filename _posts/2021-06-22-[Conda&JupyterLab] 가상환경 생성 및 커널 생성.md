@@ -45,8 +45,8 @@ python -m ipykernel install --user --name <가상환경이름>
 아래와 같이 커널이 추가된 것을 확인할 수 있다.
  
  ![architecture]({{ site.url }}{{ site.baseurl }}/assets/images/jupyter/jupyter_lab.png){: .align-center}
-
- ### 주피터 커널 삭제
+ 
+### 주피터 커널 삭제
 
  ```shell
  // 주피터 커널 리스트 확인
