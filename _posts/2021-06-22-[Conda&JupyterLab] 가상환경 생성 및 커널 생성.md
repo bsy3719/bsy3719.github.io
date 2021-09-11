@@ -1,5 +1,5 @@
 ---
-title: "[Conda&JupyterLab]] 가상환경 생성 및 커널 생성 "
+title: "[Conda&JupyterLab] 가상환경 생성 및 커널 생성 "
 date: 2021-06-22 21:30:00 -0000
 
 tagline: "by baeksy"
