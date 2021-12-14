@@ -1,10 +1,10 @@
 ---
-title: "[Apache Hadoop] 기본 설명"
+title: "[Apache Hadoop] 소개"
 date: 2021-12-13 22:00:00 -0000
 
 tagline: "by baeksy"
 header:
-  overlay_image: /assets/images/splash/code.jpeg
+  overlay_image: /assets/images/hadoop/Hadoop.png
   overlay_filter: 0.5
   #show_overlay_excerpt : false
 
@@ -16,7 +16,7 @@ categories:
   - Bigdata
 tags: 
   - Apache Hadoop
-description: DFS, BFS 알고리즘의 기초와 기본 문제들에 대해 설명한 글입니다.
+description: Apache Hadoop 소개와 HDFS, MapReduce에 대해 소개하는 글입니다.
 ---
 
 Apache Hadoop은 분산환경에서 빅데이터를 저장하고 처리할 수 있는 Java기반의 오픈소스 프레임워크입니다. Hadoop은 파일 시스템인 HDFS와 데이터를 처리하는 MapReduce 엔진을 합한 것을 말합니다.
