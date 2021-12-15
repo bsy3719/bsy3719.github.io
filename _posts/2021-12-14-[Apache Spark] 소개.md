@@ -19,6 +19,8 @@ tags:
 description: Apache Spark의 등장 배경과 특징, MapReduce와의 차이점을 설명하는 자료 입니다.
 ---
 
+### Apache Spark
+
 Apache Spark는 오픈 소스 클러스터 컴퓨팅 프레임워크이며, 클러스터 환경에서 데이터 병렬처리를 지원합니다.
 
 UC 버클리의 AMPLab에서 2009년 시작되었고 아파치 소프트웨어 재단에 기부되었습니다. 기본적으로 하둡의 MapReduce보다 10~100배 빠르게 설계가 되었습니다. 또한, job에서 필요한 데이터를 매번 디스크에서 가져오는 대신에 메모리에 저장하는 In-Memory 방식을 사용합니다. High level API를 제공하며 Java, Scala, Python, R에서도 사용가능합니다.
@@ -77,7 +79,7 @@ Executor는 Driver Process가 할당한 작업을 수행합니다
 
 사용자는 유저코드를 작성하여 클러스터 매니저에 제출합니다. Apache Spark 어플리케이션(컴파일된 jar나 라이브러리)을 클러스터 매니저에 제출하는 것을 Spark- Submit이라고 합니다.
 
-이와 동시에 클러스터 노드 중 하나에Driver Process가 뜨게되고 클러스터 매니저에게 사용할 자원에 대해 요청하게 됩니다. 이후 Driver Process는 작업을 Executor에 할당하게 되고 Executor는 작업을 수행하게 됩니다.
+이와 동시에 클러스터 노드 중 하나에 Driver Process가 뜨게되고 클러스터 매니저에게 사용할 자원에 대해 요청하게 됩니다. 이후 Driver Process는 작업을 Executor에 할당하게 되고 Executor는 작업을 수행하게 됩니다.
 
 여기서 SparkSession은 Driver Process를 제어하고, 사용자가 정의한 코드를 실행하는 역할을 담당합니다.
 

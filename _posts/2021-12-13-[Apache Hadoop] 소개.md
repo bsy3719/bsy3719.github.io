@@ -19,6 +19,8 @@ tags:
 description: Apache Hadoop 소개와 HDFS, MapReduce에 대해 소개하는 글입니다.
 ---
 
+### Apache Hadoop
+
 Apache Hadoop은 분산환경에서 빅데이터를 저장하고 처리할 수 있는 Java기반의 오픈소스 프레임워크입니다. Hadoop은 파일 시스템인 HDFS와 데이터를 처리하는 MapReduce 엔진을 합한 것을 말합니다.
 
 Hadoop은 job을 여러 노드로 분산하고, 전체연산을 잘게 나눠 병렬처리가 가능하게 하였으며, 부분적으로 장애가 발생하여도 문제없이 동작하는 장애 내성을 갖는 시스템입니다.
