@@ -20,12 +20,11 @@ description: Apache Spark의 RDD와 RDD, DataFrame, Dataset의 특징을 비교�
 ---
 
 ### RDD(Resilient Distributed Dataset)
-
-* RDD는 주된 스파크 프로그래밍 추상화의 구조이며, 여러 노드에 흩어져 있으면서 병렬처리 될 수 이는 아이템들의 모임
-* 스파크의 가장 기본적인 데이터 단위
+* RDD는 주된 Apache Spark 프로그래밍 추상화의 구조이며, 여러 노드에 흩어져 있으면서 병렬처리 될 수 이는 아이템들의 모임
+* Apache Spark의 가장 기본적인 데이터 단위
 * Resilient : 내결함성 및 장애시 데이터를 재구성할 수 있음
 	* 불변성(immutable) : RDD는 불변성을 가짐, 즉 한번 생성되면 변경할 수 없는 특징(Read Only)
-* Distributed : 스파크 클러스터를 통하여, 메모리에 분산되어 저장됨
+* Distributed : Apache Spark 클러스터를 통하여, 메모리에 분산되어 저장됨
 * Dataset : 값과 함께 파티션된 데이터 모음
 * 파티션(Partition)
 	* 모든 익스큐터가 병렬로 작업을 수행할 수 있도록 파티션이라 불리는 청크 단위로 분할
@@ -33,9 +32,9 @@ description: Apache Spark의 RDD와 RDD, DataFrame, Dataset의 특징을 비교�
 	* RDD는 동일한 파티션을 여러 노드에 복제하여 고장내성을 가짐
 
 ### RDD의 동작 원리
-* RDD는 스파크의 가장 기본적인 데이터 단위
+* RDD는 Apache Spark의 가장 기본적인 데이터 단위
 * 모든 작업은 새로운 RDD를 생성하거나_이미 존재하는 RDD를 새로운 RDD로 변형하거나_최종 결과 계산을 위해 RDD가 연산 API를 호출하는 것 중 하나에 의해 수행됨
-* 스파크에서 데이터 연산은 Transformation과 Action이라는 두가지 연산자을 통해 이루어짐
+* Apache Spark에서 데이터 연산은 Transformation과 Action이라는 두가지 연산자을 통해 이루어짐
 
 ![Apache Spark]({{ site.url }}{{ site.baseurl }}/assets/images/spark/RDD1.png){: .align-center}
 
@@ -50,18 +49,18 @@ description: Apache Spark의 RDD와 RDD, DataFrame, Dataset의 특징을 비교�
 **Transformation**
 * 기존의 RDD에서 새로운 RDD를 생성하는 동작
 * 좁은 의존성(narrow dependency), 넓은 의존성(wide dependency)를 가짐
-* 좁은 의존성 : 가진 트랜스포메이션은 각 입력 파티션이 하나의 출력 파티션에만 영향을 미침
-* 넓은 의존성 : 가진 트랜스포메이션은 하나의 입력 파티션이 여러 출렵 파티션에 영향을 미침
+* 좁은 의존성 : 가진 Transformation은 각 입력 파티션이 하나의 출력 파티션에만 영향을 미침
+* 넓은 의존성 : 가진 Transformation은 하나의 입력 파티션이 여러 출렵 파티션에 영향을 미침
 		
 **Action**
 * RDD 값을 기반으로 계산하여 결과를 생성하는 동작
-* 사용자는 트랜스포메이션을 사용해 논리적 실행 계획을 세울 수 있음
+* 사용자는 Transformation을 사용해 논리적 실행 계획을 세울 수 있음
 * 하지만 실제 연산을 수행하려면 Action명령을 내려야함
 
 **지연연산(Layze Evaluation)**
 * 연산 그래프를 처리 직전까지 기다리는 동작방식, 쉽게 말해 즉시 실행하지 않는 것
 * Action 연산자를 만나 전까지는, Transformation 연산자가 아무리 쌓여도 처리하지 않음
-* 스파크는 특정 연산이 내려진 즉시 데이터를 수정하지않고 원시 데이터에 적용한 트렌스포메이션의 실행 계획을 생성
+* Apache Spark는 특정 연산이 내려진 즉시 데이터를 수정하지않고 원시 데이터에 적용한 트렌스포메이션의 실행 계획을 생성
 * 코드를 실행하는 마지막 순간까지 대기하다가 원형 DataFrame을 간결한 물리적 실행계획으로 컴파일
 
 ### RDD VS DataFrames VS Datasets
@@ -80,8 +79,8 @@ description: Apache Spark의 RDD와 RDD, DataFrame, Dataset의 특징을 비교�
 **DataFrames**
 * Release : 1.3
 * RDD와 같이 Dataframes도 변경할 수 없는 데이터 집합
-* 다만, RDB의 관계형 테이블처럼 컬럼이 존재, 따라서 대용량 데이터를 좀 더 쉽게 처리할 수 있다.
-* 또한 구조화 되어 있기 때문에 여러 데이터 엔지니어들이 쉽게 Spark에 접근할 수 있다.
+* 다만, RDB의 관계형 테이블처럼 컬럼이 존재, 따라서 대용량 데이터를 좀 더 쉽게 처리할 수 있음
+* 또한 구조화 되어 있기 때문에 여러 데이터 엔지니어들이 쉽게 Spark에 접근할 수 있음
 * 그러나 Spark 2.0에서 Dataframe API는 Datasets API와 통합됨
 
 ![Apache Spark]({{ site.url }}{{ site.baseurl }}/assets/images/spark/DataFrame.png){: .align-center}
@@ -123,7 +122,7 @@ description: Apache Spark의 RDD와 RDD, DataFrame, Dataset의 특징을 비교�
 	* API를 단순화하여 사용하고 싶을 때
 	* R, Python 사용자
 
-요약하자면 RDD는 저수준 기능 및 제어, Dataframe과 Dataset은 고수준 및 도메인 작업 그리고 최적화에 적합합니다.
+요약하자면 RDD는 저수준 기능 및 제어, Dataframe과 Dataset은 고수준 및 도메인 작업 그리고 최적화에 적합함
 
 ## 참조링크
 * https://timewizhan.tistory.com/entry/Spark-RDD-vs-Dataframes-vs-Datasets

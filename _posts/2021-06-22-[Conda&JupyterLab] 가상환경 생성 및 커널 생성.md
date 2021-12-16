@@ -13,10 +13,11 @@ toc_label: "conda/jupyter lab"
 toc_sticky: true
 
 categories: 
+  - Bigdata
+tags: 
   - conda
   - jupyter lab
-tags: 
-  - Bigdata
+
 description: 아나콘다로 가상환경을 생성한 후 jupyter lab에 커널을 추가하는 방법을 설명하는 글입니다.
 ---
 
