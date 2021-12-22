@@ -1,6 +1,6 @@
 ---
 title: "[Apache Kafka] 소개"
-date: 2021-12-22 20:00:00 -0000
+date: 2021-12-21 20:00:00 -0000
 
 tagline: "by baeksy"
 header:
