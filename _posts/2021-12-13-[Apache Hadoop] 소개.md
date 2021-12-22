@@ -29,7 +29,6 @@ Hadoop의 코어 프로젝트는 HDFS와 맵리듀스이지만 그 외에도 다
 Haddop Ecosystem의 다른 프로젝트들은 Hadoop을 완전히 대체한다고 하기 보다는 Hadoop 시스템과 같이 사용하여 부족한 기능을 보완하고, 서로 시너지를 낸다고 할 수 있습니다.
 
 ### Haddop Ecosystem
-
 Core Project + Sub Project
 
 - 비정형데이터 수집 : 플럼
@@ -45,7 +44,6 @@ Core Project + Sub Project
 ![Apache Hadoop]({{ site.url }}{{ site.baseurl }}/assets/images/hadoop/Apache Hadoop.png){: .align-center}
 
 ### HDFS(Hadoop Distributed File System)
-
 HDFS는 수백 기가, 테라 단위의 대용량 파일을 블록 단위로 쪼개어 분산된 서버에 저장하고, 많은 클라이언트가 저장된 파일을 빠르게 처리할 수 있도록 지원해주는 파일 시스템입니다.
 
 데이터 블록들을 여러 서버에 쪼개어 중복 저장하기 때문에 하나의 노드(서버)에서 장애가 발생하더라도 이상이 없는 장애 내성을 갖게 됩니다.
@@ -63,7 +61,6 @@ HDFS는 네임노드와 데이터노드로 구성됩니다.
 ![HDFS2]({{ site.url }}{{ site.baseurl }}/assets/images/hadoop/HDFS2.png){: .align-center}
 
 ### MapReduce
-
 MapReduce는 분산 컴퓨팅을 위한 프레임워크를 말합니다. 
 
 하둡은 MapReduce라는 단순한 데이터 처리 모델을 사용함으로써 여러 대의 컴퓨터를 통해 손쉽게 대규모 데이터를 처리합니다. 

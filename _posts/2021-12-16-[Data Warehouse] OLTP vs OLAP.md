@@ -1,5 +1,5 @@
 ---
-title: "[Apache Spark] RDD"
+title: "[Data Warehouse] OLTP vs OLAP"
 date: 2021-12-16 20:00:00 -0000
 
 tagline: "by baeksy"
@@ -20,7 +20,6 @@ description: OLTP와 OLAP의 특징을 설명하고 비교한 글입니다.
 ---
 
 ### OLTP(Online Transaction Processing)
-
 - 온라인 트랜잭션 처리
 - 네트워크 상의 여러 사용자가 실시간으로 데이터베이스를 갱신하거나 조회하는 등의 단위 작업을 처리하는 방식
 - 송수신 자료를 트랜잭션 단위로 압축했기에 기존 컴퓨터 통신에서 사용해 왔던 온라인 방식과는 달리, 다수의 이용자가 거의 동시에 이용가능
@@ -28,7 +27,6 @@ description: OLTP와 OLAP의 특징을 설명하고 비교한 글입니다.
 - 1개의 트랜잭션에서 발생되는 insert, update, delete의 과정을 무결성을 보장하여 처리하고 그 결과를 select하는 과정
 
 ### OLAP(Online Analytical Processing)
-
 - 온라인 분석 처리
 - 사용자가 다양한 각도에서 직접 대화식으로 정보를 처리하는 과정
 - 단독으로 존재하는 정보시스템이 아니라, 데이터 웨어하우스나 데이터 마트와 같은 시스템에 상호연관
