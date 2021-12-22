@@ -1,6 +1,6 @@
 ---
-title: "[Algorithm] 구현
-date: 2021-09-10 21:30:00 -0000
+title: "[Algorithm] 구현"
+date: 2021-09-11 21:30:00 -0000
 
 tagline: "by baeksy"
 header:
