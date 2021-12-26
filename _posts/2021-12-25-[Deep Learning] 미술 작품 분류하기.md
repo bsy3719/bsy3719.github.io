@@ -1,10 +1,10 @@
 ---
 title: "[Deep Learning] 미술 작품 분류하기"
-date: 2021-12-25 16:00:00 -0000
+date: 2021-12-25 14:00:00 -0000
 
 tagline: "by baeksy"
 header:
-  overlay_image: /assets/images/deeplearning/vision/art_splash.png
+  overlay_image: /assets/images/splash/programer.jpeg
   overlay_filter: 0.5
   #show_overlay_excerpt : false
 
@@ -19,7 +19,8 @@ tags:
 description: 프로그래머스의 머신러닝과제인 미술 작품 분류하기에 대한 글입니다.
 ---
 
-## 문제 해설
+
+### 문제 해설
 - 데이터의 수가 부족하다고 판단 되어 기본적인 Data Augmentation을 수행
     - brightness_range
     - horizontal_flip
@@ -31,7 +32,7 @@ description: 프로그래머스의 머신러닝과제인 미술 작품 분류하
 - Predict 성능 향상을 위해 앙상블 수행
     - 개별 모델의 acc와 loss를 확인하기 위해서 각기 모델을 수행 후 weight를 load하여 prediction을 수행
 
-## 문제 해결 방안
+### 문제 해결 방안
 
 - 공통 파라미터
     - IMG_SIZE = 200
@@ -86,7 +87,7 @@ description: 프로그래머스의 머신러닝과제인 미술 작품 분류하
     - 전체 데이터셋으로 재 학습
     - vertical_flip=True 추가
 
-## GPU Check
+### GPU Check
 
 
 ```python
@@ -129,7 +130,7 @@ device_lib.list_local_devices()
 
 
 
-## Initial Settings
+### Initial Settings
 
 
 ```python
@@ -176,7 +177,7 @@ class PrintSystemLogPerEpoch(Callback):
         system_print(f'* [Epoch {epoch+1}] ends at {t} | acc={logs["acc"]:0.4f}, val_acc={logs["val_acc"]:0.4f}')
 ```
 
-## Prepare Data
+### Prepare Data
 - filename과 class들을 df로 만들기 위해서 추가 처리 수행
     - 파일 앞에 class prerfix를 붙여 rename
     - file들을 다른 폴더로 copy
@@ -267,7 +268,7 @@ plt.imshow(image)
 ![output]({{ site.url }}{{ site.baseurl }}/assets/images/deeplearning/vision/output_2.png){: .align-center}
     
 
-## Generator
+### Generator
 - 모델 실행 시 OOM이 발생하여 IMG_SIZE를 (200, 200)으로 수정
 - Cutmix를 활용하여 Data Augmentation시킴
     - input data의 특정 부분을 다른 input data와 결합시킴으로써, input data에 drop out을 취하는 효과를 얻음
@@ -447,7 +448,7 @@ validation_generator = test_datagen.flow_from_dataframe(
 ```
     
 
-## Model Settings
+### Model Settings
 
 
 ```python
@@ -467,7 +468,7 @@ conv_bases = (
 )
 ```
 
-## Model Definition
+### Model Definition
 - 모델의 경우 ImageNet 데이터 셋과 유사하다고 판단하여 pretrained model을 활용
 - art 데이터셋이므로 모든 파라미터를 재학습시킴
 - FCN의 파라미터가 많다는 단점을 개선시키기 위해서 Gloabal Averager Pooling을 활용
@@ -503,7 +504,7 @@ def get_steps(num_data, batch_size):
     return (quotient + 1) if remainder else quotient
 ```
 
-## Callback
+### Callback
 - ReduceLROnPlateau : 학습률이 개선되지 않을 때, 동적으로 학습률을 조정하여 Local Minima에 빠지는 현상을 갯너
 - EarlyStopping : model의 성능 지표가 설정한 epoch동안 개선되지 않을 때 조기 종료하기 위해서 사용
 - ModelCheckpoint : weight의 최고 성능(val_loss가 min)의 경우 weight를 저장하기 위해서 사용
@@ -553,7 +554,7 @@ VERBOSE = 1  # Verbosity mode (2: No progress bar)
 CLASS_NB = len(classes) # The number of Classes
 ```
 
-## Training
+### Training
 - 하이퍼파라미터 튜닝을 위해서 모델을 하나씩 돌려봄
 
 
@@ -615,7 +616,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-## Retraining
+### Retraining
 - 기존에 학습시킨 EfficientNetB4, Xception을 재학습시킴
     - LEARNING_RATE = 1e-4 -> 1e-5
     - UnderSampling 적용
@@ -696,7 +697,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-## Prediction
+### Prediction
 - 단일 모델 prediction과 앙상블 모델 preduiction 구현
 - prediction 결과에 person이 많이 존재하는 것으로 보아, class imbalance가 있음을 유추할 수 있음
 - class imbalance문제를 해결하기 위해 undersampling 적용
@@ -809,7 +810,7 @@ plt.show()
 ```
 ![output]({{ site.url }}{{ site.baseurl }}/assets/images/deeplearning/vision/output_6.png){: .align-center}
     
-## Submission
+### Submission
 
 ```python
 classes_test_dict = {c : i for i,c in enumerate(classes)}

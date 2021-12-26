@@ -16,7 +16,7 @@ categories:
   - Bigdata
 tags: 
   - Apache Kafka
-description: Apache Kafka 소개글입니다.
+description: Apache Kafka의 발행과 구독에 대한 글입니다.
 ---
 
 ### 토픽(Topic)과 파티션(Partition), 세그먼트 파일(Segment File)
