@@ -251,6 +251,7 @@ df["category"] = df["category"].replace(classes_dict)
 
 df['category'].value_counts().plot.bar()
 ```
+![output]({{ site.url }}{{ site.baseurl }}/assets/images/deeplearning/vision/output_1.png){: .align-center}
 
 ```python
 sample = random.choice(filenames)
@@ -258,6 +259,7 @@ image = load_img(train_dir+"/"+sample)
 plt.imshow(image)
 ```
 
+![output]({{ site.url }}{{ site.baseurl }}/assets/images/deeplearning/vision/output_2.png){: .align-center}
 
 ### Generator
 - 모델 실행 시 OOM이 발생하여 IMG_SIZE를 (200, 200)으로 수정
@@ -290,7 +292,7 @@ sampling_filenames['category'] = sampling_categories
 df_sampling = sampling_filenames.copy()
 df_sampling['category'].value_counts().plot.bar()
 ```
-
+![kafka]({{ site.url }}{{ site.baseurl }}/assets/images/kafka/kafka3.png){: .align-center}
 
 ```python
 from cutmix_keras import CutMixImageDataGenerator
@@ -385,6 +387,7 @@ for i in range(0, 15):
 plt.tight_layout()
 plt.show()
 ```
+![output]({{ site.url }}{{ site.baseurl }}/assets/images/deeplearning/vision/output_3.png){: .align-center}
     
 ```python
 test_datagen = ImageDataGenerator(rescale=1./255)
@@ -649,6 +652,7 @@ legend = plt.legend(loc='best', shadow=True)
 plt.tight_layout()
 plt.show()
 ```
+![output]({{ site.url }}{{ site.baseurl }}/assets/images/deeplearning/vision/output_4.png){: .align-center}
 
 ### Prediction
 - 단일 모델 prediction과 앙상블 모델 preduiction 구현
@@ -744,6 +748,7 @@ if not ENSEMBLE:
 ```python
 test_df['category'].value_counts().plot.bar()
 ```   
+![output]({{ site.url }}{{ site.baseurl }}/assets/images/deeplearning/vision/output_5.png){: .align-center}
 
 ```python
 sample_test = test_df.head(18)
@@ -759,7 +764,8 @@ for index, row in sample_test.iterrows():
 plt.tight_layout()
 plt.show()
 ```
-    
+![output]({{ site.url }}{{ site.baseurl }}/assets/images/deeplearning/vision/output_6.png){: .align-center}
+
 ### Submission
 
 ```python
